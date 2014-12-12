@@ -10,7 +10,7 @@ $proyectos = $proDB->getAll();
 
 
 
-if(isset($_POST['txtDescripcion'])){$descripcion = $_POST['txtDescripcion'];}  else {$descripcion="";}
+if(isset($_POST['txtDescripcion'])){$nombre = $_POST['txtDescripcion'];}  else {$nombre="";}
 if(isset($_POST['cbProyecto'])){$proyecto = $_POST['cbProyecto'];}  else {$proyecto="";}
 if(isset($_POST['cbEquipo'])){$equipo = $_POST['cbEquipo'];}  else {$equipo="";}
 
@@ -19,8 +19,8 @@ if(isset($_POST['cbEquipo'])){$equipo = $_POST['cbEquipo'];}  else {$equipo="";}
 if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
     $datosValidos=true;
     //validar campo usuario requerido
-    if(isset($_POST['txtDescripcion']) && !empty($descripcion)){
-        $descripcion=trim($_POST['txtDescripcion']);
+    if(isset($_POST['txtDescripcion']) && !empty($nombre)){
+        $nombre=trim($_POST['txtDescripcion']);
     }else{
         Session::addMensajeError("El Campo descripcion es requerido!!!");
         $datosValidos=false;
@@ -28,7 +28,7 @@ if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
     
     if($datosValidos){
         $tareasDB = new Tareas();
-        if($tareasDB->add($equipo, $descripcion, $proyecto)==1){
+        if($tareasDB->add($equipo, $nombre, $proyecto)==1){
             Session::addMensajeOk("Una nueva Tarea se Guardo Correctamente");
             header("location:tareas.php");
             exit();

@@ -6,6 +6,7 @@ $listaProyectos = $proyectoDB ->getAll();
 <?php ob_start() ?>
 <div class='row'>
     <h1>Listado de Proyectos</h1>
+    <p><a href="?op=new" class="btn btn-primary" role="button">Nuevo Proyecto</a>
     <table class='table table-hover table-striped'>
         <thead>
             <tr>

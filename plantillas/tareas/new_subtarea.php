@@ -4,7 +4,7 @@ if(isset($_REQUEST['id_tarea'])){$id_tarea=$_REQUEST['id_tarea'];}else $id_tarea
 
 
 
-if(isset($_POST['txtDescripcion'])){$descripcion = $_POST['txtDescripcion'];}  else {$descripcion="";}
+if(isset($_POST['txtDescripcion'])){$nombre = $_POST['txtDescripcion'];}  else {$nombre="";}
 if(isset($_POST['txtInicio'])){$inicio = $_POST['txtInicio'];}  else {$inicio="";}
 if(isset($_POST['txtFin'])){$fin = $_POST['txtFin'];}  else {$fin="";}
 
@@ -13,8 +13,8 @@ if(isset($_POST['txtFin'])){$fin = $_POST['txtFin'];}  else {$fin="";}
 if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
     $datosValidos=true;
     //validar campo usuario requerido
-    if(isset($_POST['txtDescripcion']) && !empty($descripcion)){
-        $descripcion=trim($_POST['txtDescripcion']);
+    if(isset($_POST['txtDescripcion']) && !empty($nombre)){
+        $nombre=trim($_POST['txtDescripcion']);
     }else{
         Session::addMensajeError("El Campo descripcion es requerido!!!");
         $datosValidos=false;
@@ -22,7 +22,7 @@ if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
     
     if($datosValidos){
         $tareasDB = new Subtareas();
-        if($tareasDB->add($id_tarea, $descripcion, $inicio, $fin)==1){
+        if($tareasDB->add($id_tarea, $nombre, $inicio, $fin)==1){
             Session::addMensajeOk("Una nueva SubTarea se Guardo Correctamente");
             header("location:tareas/subtareas.php");
             exit();

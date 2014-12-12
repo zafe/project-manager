@@ -6,7 +6,7 @@ $grupos=$cpDB->getAll();
 
 $prod= new Productos();
 
-if(isset($_POST['descripcion'])){$descripcion = $_POST['descripcion'];}  else {$descripcion="";}
+if(isset($_POST['descripcion'])){$nombre = $_POST['descripcion'];}  else {$nombre="";}
 if(isset($_POST['cantidad'])){$cantidad = $_POST['cantidad'];}else{$cantidad="";}
 if(isset($_POST['precio'])){$precio = $_POST['precio'];}else{$precio="";}
 if(isset($_POST['grupos_id'])){$grupos_id = $_POST['grupos_id'];}else{$grupos_id="";}
@@ -16,7 +16,7 @@ if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
    
 
     
-    if(!empty($descripcion)){
+    if(!empty($nombre)){
         if(!empty($cantidad)){
             if(!empty($precio)){
                 $datosValidos=true;
@@ -27,7 +27,7 @@ if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
     }else {Session::addMensajeError("El Campo descripcion es requerido...");$datosValidos=false;}
     
     if($datosValidos==true){
-        if($prod->add($descripcion, $cantidad, $precio,$grupos_id)==1){
+        if($prod->add($nombre, $cantidad, $precio,$grupos_id)==1){
             Session::addMensajeOk("El Nuevo Producto se Guardo Correctamente");
             header("location:admin-productos.php");
              exit();

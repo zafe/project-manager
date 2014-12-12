@@ -13,7 +13,7 @@ class Usuarios extends MySQLDB {
                                     u.nombre,
                                     u.apellido,
                                     u.url_imagen as imagen
-                                    FROM usuario u 
+                                    FROM Usuario u 
                                     ORDER BY u.apellido");
     }
     

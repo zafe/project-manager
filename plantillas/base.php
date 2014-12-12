@@ -6,17 +6,19 @@
             if(isset($titulo)){
                 echo $titulo;
             }  else {
-                echo "Catalogo de Productos";
+                echo "Administracion de Proyectos";
             }                
         ?>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS de Bootstrap -->    
     <!--link href="css/bootstrap.min.css" rel="stylesheet" media="screen"-->
-    <link href="css/bootstrap-theme-united.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-theme-cerulean.min.css" rel="stylesheet" media="screen">
 
     <!-- CSS adicional con mis configuraciones -->
     <link href="css/sticky-footer-navbar.css" rel="stylesheet" media="screen"> 
+   
+    
     <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -24,6 +26,7 @@
     <![endif]-->
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
  
     <!-- Todos los plugins JavaScript de Bootstrap (también puedes
          incluir archivos JavaScript individuales de los únicos
@@ -42,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="index.php"><img src="../img/glyphicons/png/glyphicons-21-home.png"/><b></b></a>
+                  <a class="navbar-brand" href="index.php"><img src="./img/glyphicons/png/glyphicons-21-home.png"/><b></b></a>
                 </div>
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
@@ -50,21 +53,22 @@
                     <?php if(Session::isValid()) : ?>
                     <!--li><a href="ventas.php">Ventas</a></li-->
                     <li><a href="tareas.php">Tareas</a></li>
-                    
+                    <?php if(Session::isSuperAdmin()) : ?> 
                     <li class="dropdown"> 
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         Administraci&oacute;n 
                         <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
                         
-                       <?php if(Session::isSuperAdmin()) : ?> 
-                        <a class="dropdown-header" href="admin-usuarios.php">Administraci&oacute;n de Usuarios</a>                  
-                       </ul>
+                        
+                       
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-header" href="admin-usuarios.php">Administraci&oacute;n de Usuarios</a>                  
+                        </ul>
                         <li><a href="equipos.php">Equipos</a></li>
+                        <?php endif ?>    
+                        
                         <?php endif ?>
-                    </li>     
-                    <?php endif ?>
                   </ul>
                     <div class="nav navbar-nav navbar-text navbar-right" >
                       <?php if(Session::isValid()) : ?>                        
