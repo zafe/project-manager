@@ -13,6 +13,9 @@ if(isset($_REQUEST['op'])){
         case "new":
             include 'plantillas/proyectos/new.php';
             break;
+        case "del":
+            include 'plantillas/proyectos/del.php';
+            break;
         default :
             include 'plantillas/proyectos/list.php';
             break;

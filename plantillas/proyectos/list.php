@@ -14,7 +14,7 @@ $listaProyectos = $proyectoDB ->getAll();
                 <th>Nombre</th>
                 <th>Fecha de Creaci&oacute;n</th>
                 <th>Fecha de Finalizaci&oacute;n</th>
-                <th></th>
+                <th>Cambios</th>
             </tr>            
         </thead>
         <tbody>
@@ -23,9 +23,7 @@ $listaProyectos = $proyectoDB ->getAll();
                 <td><?php echo $p["nombre"] ?></td>
                 <td><?php echo $p['fecha_creacion'] ?></td>
                 <td><?php echo $p['fecha_final'] ?></td>
-                <td>
-                    
-                </td>
+                <td> <a href="?op=del&id=<?php echo $p["idProyecto"] ?>" class="glyphicon glyphicon-trash"> Eliminar</a></td>
             </tr>
             <?php endforeach ?>
         </tbody>

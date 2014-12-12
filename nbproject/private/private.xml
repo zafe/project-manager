@@ -3,13 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/prods/admin-usuarios.php</file>
-            <file>file:/var/www/html/prods/about.php</file>
+            <file>file:/var/www/html/prods/plantillas/tareas/new.php</file>
+            <file>file:/var/www/html/prods/classes/Subtareas.php</file>
             <file>file:/var/www/html/prods/classes/Usuarios.php</file>
-            <file>file:/var/www/html/prods/classes/Session.php</file>
+            <file>file:/var/www/html/prods/proyectos.php</file>
+            <file>file:/var/www/html/prods/productos.php</file>
             <file>file:/var/www/html/prods/classes/MySQLDB.php</file>
-            <file>file:/var/www/html/prods/index.php</file>
             <file>file:/var/www/html/prods/login.php</file>
+            <file>file:/var/www/html/prods/admin-usuarios.php</file>
+            <file>file:/var/www/html/prods/classes/EquipoTrabajo.php</file>
+            <file>file:/var/www/html/prods/plantillas/usuarios/new.php</file>
+            <file>file:/var/www/html/prods/classes/AsignacionEq.php</file>
+            <file>file:/var/www/html/prods/plantillas/proyectos/new.php</file>
+            <file>file:/var/www/html/prods/plantillas/proyectos/del.php</file>
+            <file>file:/var/www/html/prods/tareas.php</file>
+            <file>file:/var/www/html/prods/classes/Tareas.php</file>
+            <file>file:/var/www/html/prods/classes/AsignacionTarea.php</file>
+            <file>file:/var/www/html/prods/config.php</file>
+            <file>file:/var/www/html/prods/plantillas/productos/del.php</file>
+            <file>file:/var/www/html/prods/index.php</file>
+            <file>file:/var/www/html/prods/plantillas/usuarios/list.php</file>
+            <file>file:/var/www/html/prods/classes/Proyectos.php</file>
+            <file>file:/var/www/html/prods/plantillas/usuarios/del.php</file>
+            <file>file:/var/www/html/prods/classes/Session.php</file>
+            <file>file:/var/www/html/prods/plantillas/tareas/principal.php</file>
+            <file>file:/var/www/html/prods/plantillas/base.php</file>
+            <file>file:/var/www/html/prods/plantillas/proyectos/list.php</file>
+            <file>file:/var/www/html/prods/classes/Entregas.php</file>
         </group>
     </open-files>
 </project-private>
