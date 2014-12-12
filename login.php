@@ -8,7 +8,7 @@ if(isset($_POST['btn'])){
     if($p!=NULL){
         $_SESSION["auth"]=true;
         $_SESSION["usuario"]=$p['nomb_usr'];
-        //$_SESSION["usuario"]=$p['usuario'];
+        $_SESSION["idUsuario"]=$p['idUsuario'];
         $_SESSION["nombrecompleto"]=$p['apellido'].", ".$p['nombre'];
         if($p['idEquipo']==1){
             $_SESSION["superadmin"]=true;

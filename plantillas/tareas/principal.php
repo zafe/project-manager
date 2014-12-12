@@ -54,7 +54,7 @@ Session::start();
                             <div class="caption" style="width: 100%">
                                 <h3>Mis Tareas!</h3>
                                 <p>Trabajar en tareas pendientes de distintos proyectos, crear subtareas, realizar subtareas y mas</p>
-                                <p><a href="?op=mis_tareas&id_usuario=1" class="btn btn-primary" role="button">Ver Tareas</a>
+                                <p><a href="?op=mis_tareas&id_usuario=<?php echo $_SESSION["idUsuario"] ?>" class="btn btn-primary" role="button">Ver Tareas</a>
                             </div>
                         </div>
                     </div>
