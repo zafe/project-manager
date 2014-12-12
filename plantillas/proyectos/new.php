@@ -1,26 +1,26 @@
 <?php
 
-if(isset($_POST['txtNombre'])){$nombre = $_POST['txtDescripcion'];}  else {$nombre="";}
-if(isset($_POST['cbProyecto'])){$proyecto = $_POST['cbProyecto'];}  else {$proyecto="";}
-if(isset($_POST['cbEquipo'])){$equipo = $_POST['cbEquipo'];}  else {$equipo="";}
+if(isset($_POST['txtNombre'])){$nombre = $_POST['txtNombre'];}  else {$nombre="";}
+if(isset($_POST['txtfechaInicio'])){$fechaInicio = $_POST['txtfechaInicio'];}  else {$fechaInicio="";}
+if(isset($_POST['txtfehaFin'])){$fechaFin = $_POST['txtfechaFin'];}  else {$fechaFin="";}
 
 
 //si se presiono el boton de guardar
 if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
     $datosValidos=true;
     //validar campo usuario requerido
-    if(isset($_POST['txtDescripcion']) && !empty($nombre)){
-        $nombre=trim($_POST['txtDescripcion']);
+    if(isset($_POST['txtNombre']) && !empty($nombre)){
+        $nombre=trim($_POST['txtNombre']);
     }else{
-        Session::addMensajeError("El Campo descripcion es requerido!!!");
+        Session::addMensajeError("El Campo nombre es requerido!!!");
         $datosValidos=false;
     }
     
     if($datosValidos){
-        $tareasDB = new Tareas();
-        if($tareasDB->add($equipo, $nombre, $proyecto)==1){
-            Session::addMensajeOk("Una nueva Tarea se Guardo Correctamente");
-            header("location:tareas.php");
+        $proyectosDB = new Proyectos();
+        if($proyectosDB->add($nombre, $fechaInicio,$fechaFin)==1){
+            Session::addMensajeOk("Se creo un nuevo proyecto");
+            header("location:proyectos.php");
             exit();
         }//if($usr->add($usuario, $apellidos, $nombres, $pass)==1)
     }//if($datosValidos)

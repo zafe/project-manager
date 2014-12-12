@@ -21,8 +21,8 @@ if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
     }
     
     if($datosValidos){
-        $tareasDB = new Subtareas();
-        if($tareasDB->add($id_tarea, $nombre, $inicio, $fin)==1){
+        $proyectosDB = new Subtareas();
+        if($proyectosDB->add($id_tarea, $nombre, $inicio, $fin)==1){
             Session::addMensajeOk("Una nueva SubTarea se Guardo Correctamente");
             header("location:tareas/subtareas.php");
             exit();

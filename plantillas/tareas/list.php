@@ -1,7 +1,7 @@
 <?php
 
-$tareasDB = new Tareas();
-$listaTareas = $tareasDB ->getTareas();
+$proyectosDB = new Tareas();
+$listaTareas = $proyectosDB ->getTareas();
 ?>
 <?php ob_start() ?>
 <div class='row'>

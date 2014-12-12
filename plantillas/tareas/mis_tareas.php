@@ -1,8 +1,8 @@
 <?php
 if(isset($_REQUEST['id_usuario'])){$id_usuario=$_REQUEST['id_usuario'];}else $id_usuario = "";
 
-$tareasDB = new AsignacionTarea();
-$listaTareas = $tareasDB ->getTareasAsignadas($id_usuario);
+$proyectosDB = new AsignacionTarea();
+$listaTareas = $proyectosDB ->getTareasAsignadas($id_usuario);
 ?>
 <?php ob_start() ?>
 <div class='row'>

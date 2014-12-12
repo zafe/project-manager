@@ -11,8 +11,8 @@ $proyectos = $proDB->getAll();
 
 
 if(isset($_POST['txtDescripcion'])){$nombre = $_POST['txtDescripcion'];}  else {$nombre="";}
-if(isset($_POST['cbProyecto'])){$proyecto = $_POST['cbProyecto'];}  else {$proyecto="";}
-if(isset($_POST['cbEquipo'])){$equipo = $_POST['cbEquipo'];}  else {$equipo="";}
+if(isset($_POST['cbProyecto'])){$fechaInicio = $_POST['cbProyecto'];}  else {$fechaInicio="";}
+if(isset($_POST['cbEquipo'])){$fechaFin = $_POST['cbEquipo'];}  else {$fechaFin="";}
 
 
 //si se presiono el boton de guardar
@@ -27,8 +27,8 @@ if(isset($_POST['btn-guardar']) && $_POST['btn-guardar'] == "Guardar"){
     }
     
     if($datosValidos){
-        $tareasDB = new Tareas();
-        if($tareasDB->add($equipo, $nombre, $proyecto)==1){
+        $proyectosDB = new Tareas();
+        if($proyectosDB->add($fechaFin, $nombre, $fechaInicio)==1){
             Session::addMensajeOk("Una nueva Tarea se Guardo Correctamente");
             header("location:tareas.php");
             exit();
