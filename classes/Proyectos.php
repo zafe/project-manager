@@ -7,8 +7,7 @@ class Proyectos extends MySQLDB{
     }
     
     public function add($nombre, $fechaInicio, $fechaFin){
-        return $this->update("INSERT INTO Proyecto (nombre,fecha_creacion,fecha_fin)"
-                . " VALUES ('$nombre','$fechaInicio','$fechaFin')");
+        return $this->update("INSERT INTO Proyecto (nombre,fecha_creacion,fecha_final) VALUES ('$nombre','$fechaInicio','$fechaFin')");
     }
     
 }

@@ -2,7 +2,7 @@
 
 if(isset($_POST['txtNombre'])){$nombre = $_POST['txtNombre'];}  else {$nombre="";}
 if(isset($_POST['txtfechaInicio'])){$fechaInicio = $_POST['txtfechaInicio'];}  else {$fechaInicio="";}
-if(isset($_POST['txtfehaFin'])){$fechaFin = $_POST['txtfechaFin'];}  else {$fechaFin="";}
+if(isset($_POST['txtfechaFin'])){$fechaFin = $_POST['txtfechaFin'];}  else {$fechaFin="";}
 
 
 //si se presiono el boton de guardar
@@ -41,7 +41,7 @@ if(isset($_POST['btn-cancelar']) && $_POST['btn-cancelar'] == "Cancelar"){
         <fieldset>
             <legend>Nuevo Proyecto</legend>
             <div class="form-group">
-                <label for="txtDescripcion">Descripci&oacute;n</label>
+                <label for="txtDescripcion">Nombre</label>
                 <input class="form-control" type="text" name="txtNombre" id="txtNombre"  />
             </div>
             
