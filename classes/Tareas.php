@@ -25,6 +25,11 @@ class Tareas extends MySQLDB{
         return $this->query("SELECT * FROM Tarea ORDER BY fecha_inicio");
     }
     
+    public function getById($id){
+       $id = mysql_real_escape_string($id, $this->link);
+       return $this->update("SELECT * FROM Tarea WHERE idTarea = $id");
+    }
+    
     /**
      * Obtengo todas las tareas, estado, quien es el equipo responsable y a que proyecto pertenece
      */
@@ -56,5 +61,10 @@ class Tareas extends MySQLDB{
 
         return $this->update("INSERT INTO Tarea (idEquipo, descripcion, estado, fecha_inicio, idProyecto)
                              VALUES ($equipo,'$descripcion',1 ,now(), $proyecto)");
+    }
+    
+    public function deleteById($id){
+        $id = mysql_real_escape_string($id, $this->link);
+        return $this->update("DELETE FROM Tarea WHERE idTarea = $id");
     }
 }

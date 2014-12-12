@@ -27,8 +27,8 @@ $listaTareas = $proyectosDB ->getTareas();
                 <td><?php echo $t['nombre_proyecto'] ?></td>
                 <td><?php echo $t['nombre_equipo'] ?></td>    
                 <td>
-                    <a href='?op=edit&usuario=<?php echo $u['nomb_usr'] ?>' >editar</a> |
-                    <a href='?op=del&usuario=<?php echo $u['nomb_usr'] ?>' onclick="confirm('Esta seguro de Eliminar?')">eliminar</a>
+                    <a href='?op=edit&tarea=<?php echo $t['idTarea'] ?>' >editar</a> |
+                    <a href='?op=del&tarea=<?php echo $t['idTarea'] ?>' onclick="confirm('Esta seguro de Eliminar?')">eliminar</a>
                 </td>
             </tr>
             <?php endforeach ?>

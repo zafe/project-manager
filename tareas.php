@@ -13,6 +13,9 @@ if(isset($_REQUEST['op'])){
         case "new":
             include 'plantillas/tareas/new.php';
             break;
+        case "del":
+            include 'plantillas/tareas/del.php';
+            break;
         case "new_subtarea":
             include 'plantillas/tareas/new_subtarea.php';
             break;
