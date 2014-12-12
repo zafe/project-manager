@@ -88,7 +88,7 @@ class Usuarios extends MySQLDB {
         $dni=mysql_real_escape_string($dni,$this->link);
         $sueldo=mysql_real_escape_string($sueldo,$this->link);
         //cifrar la clave
-        $pass=crypt($pass);
+        $pass=crypt($pass,'alvaro');
         return $this->update("INSERT INTO Usuario (nomb_usr, password, nombre, apellido, dni, sueldo)
                              VALUES ('$nomb_usr','$pass','$nombre','$apellido',$dni, $sueldo)");
     }
@@ -98,12 +98,12 @@ class Usuarios extends MySQLDB {
         $pass=mysql_real_escape_string($pass,$this->link);
         $usuario=$this->getById($usr);
         if($usuario!=NULL){            
-            //$salt = crypt($pass, $usuario['password']);
+           $salt = crypt($pass, 'alvaro');
             //error_log($salt);
             //error_log($usuario['password']);
-            //if( $salt == $usuario['password']){
-                return $usuario;
-            //}
+           if( $salt == $usuario['password']){
+            return $usuario;
+            }
         }
         return NULL;
     }
